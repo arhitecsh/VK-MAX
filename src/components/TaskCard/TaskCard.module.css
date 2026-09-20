@@ -1,0 +1,124 @@
+.card {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 14px 14px 14px 18px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+  animation: slideUp 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-2);
+}
+.card:active {
+  transform: translateY(0) scale(0.995);
+}
+
+.accent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+}
+.high .accent {
+  background: var(--high);
+}
+.medium .accent {
+  background: var(--medium);
+}
+.low .accent {
+  background: var(--low);
+}
+.done .accent {
+  background: var(--done);
+}
+
+.icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  background: var(--surface-2);
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px;
+  font-size: 12.5px;
+  color: var(--text-2);
+}
+.subject {
+  font-weight: 600;
+  color: var(--text-2);
+}
+.deadline {
+  color: var(--text-3);
+}
+.time {
+  color: var(--text-3);
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.chevron {
+  color: var(--text-3);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+/* Выполнено */
+.done {
+  background: var(--surface-2);
+}
+.done .title {
+  color: var(--text-2);
+  text-decoration: line-through;
+  text-decoration-color: var(--border-2);
+}
+.done .icon {
+  background: var(--done-soft);
+}

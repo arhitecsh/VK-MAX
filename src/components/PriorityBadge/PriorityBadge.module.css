@@ -1,0 +1,53 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* dot-only: сама точка окрашена */
+.dot.high {
+  background: var(--high);
+}
+.dot.medium {
+  background: var(--medium);
+}
+.dot.low {
+  background: var(--low);
+}
+
+/* варианты бейджа */
+.badge.high {
+  background: var(--high-soft);
+  color: var(--high);
+}
+.badge.high .dot {
+  background: var(--high);
+}
+.badge.medium {
+  background: var(--medium-soft);
+  color: #b9780a;
+}
+.badge.medium .dot {
+  background: var(--medium);
+}
+.badge.low {
+  background: var(--low-soft);
+  color: var(--primary-600);
+}
+.badge.low .dot {
+  background: var(--low);
+}

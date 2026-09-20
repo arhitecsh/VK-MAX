@@ -1,0 +1,31 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 0 20px;
+  animation: fadeIn 0.3s ease both;
+}
+
+.radarCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 18px 14px 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.sectionTitle {
+  font-size: 17px;
+  font-weight: 740;
+  letter-spacing: -0.01em;
+}
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

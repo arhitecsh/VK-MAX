@@ -1,0 +1,101 @@
+import type { IncomingMessage } from "../types"
+
+// ============================================================
+// Mock-данные: входящие сообщения / учебная информация.
+// Позже сюда придут реальные сообщения из MAX, а "suggestedTask"
+// будет формироваться ИИ-модулем (классификация: предмет,
+// задание, дедлайн, приоритет, источник).
+// ============================================================
+
+export const mockMessages: IncomingMessage[] = [
+  {
+    id: "m-phys-lab",
+    subject: "Физика",
+    text: "К четвергу подготовить лабораторную работу №3",
+    receivedAt: "сегодня, 16:42",
+    addedToRadar: false,
+    actionLabel: "Добавить на радар",
+    suggestedTask: {
+      title: "Лабораторная работа №3",
+      subject: "Физика",
+      kind: "lab",
+      deadline: "2026-09-19T18:00:00",
+      priority: "medium",
+      source: "teacher_message",
+      sourceLabel: "Сообщение учителя физики",
+      sourceTime: "сегодня, 16:42",
+      estimatedTime: 25,
+      description: "Подготовить лабораторную работу №3 к четвергу.",
+      attachment: "Лабораторная_3.pdf",
+      day: 3,
+    },
+  },
+  {
+    id: "m-math-selfwork",
+    subject: "Математика",
+    text: "На следующем уроке будет самостоятельная работа по теме «Производная»",
+    receivedAt: "вчера, 18:21",
+    addedToRadar: true,
+    taskId: "t-math-selfwork",
+    actionLabel: "Добавить подготовку",
+    suggestedTask: {
+      title: "Самостоятельная работа «Производная»",
+      subject: "Математика",
+      kind: "exam",
+      deadline: "2026-09-19T10:00:00",
+      priority: "low",
+      source: "teacher_message",
+      sourceLabel: "Сообщение учителя математики",
+      sourceTime: "вчера, 18:21",
+      estimatedTime: 35,
+      description:
+        "На следующем уроке будет самостоятельная работа по теме «Производная».",
+      day: 3,
+    },
+  },
+  {
+    id: "m-hist-reading",
+    subject: "История",
+    text: "Прочитать параграф 17 и ответить на вопросы",
+    receivedAt: "сегодня, 12:10",
+    addedToRadar: true,
+    taskId: "t-hist-reading",
+    actionLabel: "Добавить",
+    suggestedTask: {
+      title: "История — прочитать §17",
+      subject: "История",
+      kind: "reading",
+      deadline: "2026-09-20T23:59:00",
+      priority: "low",
+      source: "teacher_message",
+      sourceLabel: "Сообщение учителя истории",
+      sourceTime: "сегодня, 12:10",
+      estimatedTime: 20,
+      description: "Прочитать параграф 17 и ответить на вопросы.",
+      day: 4,
+    },
+  },
+  {
+    id: "m-chem-file",
+    subject: "Химия",
+    text: "Выслал файл с задачами по теме «Оксиды». Решить к пятнице.",
+    receivedAt: "вчера, 15:30",
+    addedToRadar: true,
+    taskId: "t-chem-hw",
+    actionLabel: "Добавить",
+    suggestedTask: {
+      title: "Домашнее задание по химии",
+      subject: "Химия",
+      kind: "homework",
+      deadline: "2026-09-18T23:59:00",
+      priority: "low",
+      source: "file",
+      sourceLabel: "Файл задания",
+      sourceTime: "вчера, 15:30",
+      estimatedTime: 20,
+      description: "Решить задачи по теме «Оксиды».",
+      attachment: "oxides_tasks.pdf",
+      day: 1,
+    },
+  },
+]

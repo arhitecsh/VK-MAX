@@ -1,0 +1,93 @@
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background: rgba(20, 25, 50, 0.42);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: fadeIn 0.22s ease both;
+  padding: 0;
+}
+
+.sheet {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  max-height: 92vh;
+  background: var(--surface);
+  border-radius: 28px 28px 0 0;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  animation: sheetUp 0.34s cubic-bezier(0.22, 1, 0.36, 1) both;
+  overflow: hidden;
+}
+
+.handle {
+  width: 40px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--border-2);
+  margin: 10px auto 2px;
+  flex-shrink: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 20px 14px;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.close {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--surface-3);
+  color: var(--text-2);
+  display: grid;
+  place-items: center;
+  transition: background 0.15s ease, transform 0.15s ease;
+  flex-shrink: 0;
+}
+.close:hover {
+  background: var(--border);
+}
+.close:active {
+  transform: scale(0.92);
+}
+
+.body {
+  padding: 0 20px 28px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Десктоп — диалог по центру */
+@media (min-width: 768px) {
+  .overlay {
+    align-items: center;
+    padding: 24px;
+  }
+  .sheet {
+    max-height: 86vh;
+    border-radius: 24px;
+    animation: scaleIn 0.26s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .handle {
+    display: none;
+  }
+  .header {
+    padding-top: 20px;
+  }
+}

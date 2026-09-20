@@ -1,0 +1,84 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 0 20px;
+  animation: fadeIn 0.3s ease both;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 4px;
+  border-radius: var(--r-md);
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  transition: all 0.16s ease;
+}
+.day:hover {
+  border-color: var(--border-2);
+}
+.dayShort {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-2);
+}
+.dayDate {
+  font-size: 16px;
+  font-weight: 750;
+}
+.dayToday .dayDate {
+  color: var(--primary-600);
+}
+.dayActive {
+  background: var(--primary-grad);
+  border-color: transparent;
+  box-shadow: 0 8px 18px rgba(76, 111, 255, 0.3);
+}
+.dayActive .dayShort,
+.dayActive .dayDate {
+  color: #fff;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.sectionTitle {
+  font-size: 17px;
+  font-weight: 740;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.todayTag {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: var(--primary);
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.lessons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

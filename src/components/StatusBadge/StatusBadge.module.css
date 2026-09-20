@@ -1,0 +1,31 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.icon {
+  font-size: 11px;
+  line-height: 1;
+}
+
+.todo {
+  background: var(--surface-3);
+  color: var(--text-2);
+}
+
+.in_progress {
+  background: var(--low-soft);
+  color: var(--primary-600);
+}
+
+.completed {
+  background: var(--done-soft);
+  color: #158a54;
+}
