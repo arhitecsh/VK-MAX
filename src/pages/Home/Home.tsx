@@ -74,7 +74,6 @@ export function Home() {
               {plural(stats.lessonsToday, "урок", "урока", "уроков")}
             </span>
           </div>
-          <div className={styles.divider} />
           <div className={styles.stat}>
             <span className={`${styles.statNum} ${styles.statAccent}`}>
               {stats.important}
@@ -83,7 +82,6 @@ export function Home() {
               {plural(stats.important, "важное дело", "важных дела", "важных дел")}
             </span>
           </div>
-          <div className={styles.divider} />
           <div className={styles.stat}>
             <span className={styles.statNum}>{stats.upcoming}</span>
             <span className={styles.statLabel}>
