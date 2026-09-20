@@ -242,7 +242,7 @@
 .btnPrimary {
   background: var(--primary-grad);
   color: #fff;
-  box-shadow: 0 8px 20px rgba(76, 111, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(108, 74, 224, 0.3);
 }
 .btnPrimary:hover {
   filter: brightness(1.05);

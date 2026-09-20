@@ -6,34 +6,54 @@
 
 :root {
   /* Поверхности */
-  --bg: #eef1f9;
+  --bg: #f1eefb;
   --surface: #ffffff;
-  --surface-2: #f6f8fd;
-  --surface-3: #eef1f9;
+  --surface-2: #f7f5fd;
+  --surface-3: #efeafb;
 
   /* Текст */
-  --text: #161a26;
-  --text-2: #5a6172;
-  --text-3: #9aa1b2;
+  --text: #1a1628;
+  --text-2: #5e5a72;
+  --text-3: #9d98b2;
+
+  /* Текст на фоне (заголовки, навигация) */
+  --text-on-bg: #1a1628;
+  --text-on-bg-2: #5e5a72;
+  --text-on-bg-3: #9d98b2;
+  --primary-light: #5636c4;
+
+  /* Нижняя навигация */
+  --nav-bg: rgba(255, 255, 255, 0.86);
+  --nav-border: var(--border);
+  --nav-active-bg: var(--surface-3);
 
   /* Границы */
-  --border: #e7eaf3;
-  --border-2: #dfe3ef;
+  --border: #e8e4f3;
+  --border-2: #dfd9ef;
 
-  /* Брендовый (Сферум-синий) */
-  --primary: #4c6fff;
-  --primary-600: #3a56d4;
-  --primary-700: #2f47b8;
-  --primary-soft: #eaefff;
-  --primary-grad: linear-gradient(135deg, #5b7cff 0%, #3a56d4 100%);
+  /* Брендовый (фиолетовый) */
+  --primary: #6c4ae0;
+  --primary-600: #5636c4;
+  --primary-700: #452aa8;
+  --primary-soft: #efe9ff;
+  --primary-grad: linear-gradient(135deg, #8b5cf6 0%, #6c4ae0 50%, #5636c4 100%);
+
+  /* Акцент (розовый) */
+  --accent: #f0489b;
+  --accent-soft: #fde7f3;
+  --accent-grad: linear-gradient(135deg, #f0489b 0%, #d63384 100%);
+
+  /* Вторичный (бирюзовый) */
+  --teal: #4ec5d4;
+  --teal-soft: #e0f7fa;
 
   /* Приоритеты */
   --high: #f04438;
   --high-soft: #fdece9;
   --medium: #f5a623;
   --medium-soft: #fef3e0;
-  --low: #4c6fff;
-  --low-soft: #eaefff;
+  --low: #6c4ae0;
+  --low-soft: #efe9ff;
   --done: #21b573;
   --done-soft: #e4f7ee;
 
@@ -52,6 +72,18 @@
   --nav-h: 68px;
   --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------- Тёмная тема ---------- */
+:root[data-theme="dark"] {
+  --bg: #171233;
+  --text-on-bg: #f3f0ff;
+  --text-on-bg-2: #b9b2d6;
+  --text-on-bg-3: #8b83ad;
+  --primary-light: #a78bfa;
+  --nav-bg: rgba(23, 18, 51, 0.86);
+  --nav-border: rgba(255, 255, 255, 0.08);
+  --nav-active-bg: rgba(255, 255, 255, 0.08);
 }
 
 * {
@@ -157,13 +189,13 @@ p {
 
 @keyframes pulseRing {
   0% {
-    box-shadow: 0 0 0 0 rgba(76, 111, 255, 0.35);
+    box-shadow: 0 0 0 0 rgba(108, 74, 224, 0.35);
   }
   70% {
-    box-shadow: 0 0 0 10px rgba(76, 111, 255, 0);
+    box-shadow: 0 0 0 10px rgba(108, 74, 224, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(76, 111, 255, 0);
+    box-shadow: 0 0 0 0 rgba(108, 74, 224, 0);
   }
 }
 
@@ -183,7 +215,7 @@ p {
   height: 8px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cdd3e3;
+  background: #c9c2e0;
   border-radius: 8px;
 }
 ::-webkit-scrollbar-track {
@@ -197,8 +229,15 @@ p {
   justify-content: center;
   align-items: stretch;
   background:
-    radial-gradient(1200px 600px at 15% -10%, #e6ecff 0%, transparent 55%),
-    radial-gradient(1000px 500px at 110% 10%, #eaf0ff 0%, transparent 50%),
+    radial-gradient(1200px 600px at 15% -10%, #ece4ff 0%, transparent 55%),
+    radial-gradient(1000px 500px at 110% 10%, #f3e6f6 0%, transparent 50%),
+    var(--bg);
+}
+
+:root[data-theme="dark"] .app-shell {
+  background:
+    radial-gradient(1200px 600px at 15% -10%, rgba(108, 74, 224, 0.28) 0%, transparent 55%),
+    radial-gradient(1000px 500px at 110% 10%, rgba(240, 72, 155, 0.16) 0%, transparent 50%),
     var(--bg);
 }
 

@@ -6,10 +6,10 @@
   width: 100%;
   max-width: 460px;
   height: var(--nav-h);
-  background: rgba(255, 255, 255, 0.86);
+  background: var(--nav-bg);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--nav-border);
   display: flex;
   align-items: stretch;
   justify-content: space-around;
@@ -24,14 +24,14 @@
   align-items: center;
   justify-content: center;
   gap: 3px;
-  color: var(--text-3);
+  color: var(--text-on-bg-3);
   border-radius: 14px;
   transition: color 0.18s ease, background 0.18s ease;
   position: relative;
 }
 
 .item:active {
-  background: var(--surface-3);
+  background: var(--nav-active-bg);
 }
 
 .icon {
@@ -48,7 +48,7 @@
 }
 
 .active {
-  color: var(--primary-600);
+  color: var(--primary-light);
 }
 .active .icon {
   transform: translateY(-1px) scale(1.06);
@@ -60,5 +60,5 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: var(--primary);
+  background: var(--primary-light);
 }

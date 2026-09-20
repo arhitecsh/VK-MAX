@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { AppProvider, useApp } from "./context/AppContext"
 import { BottomNavigation } from "./components/BottomNavigation/BottomNavigation"
 import { Modal } from "./components/Modal/Modal"
@@ -10,9 +11,20 @@ import { Week } from "./pages/Week/Week"
 import { Profile } from "./pages/Profile/Profile"
 
 function Shell() {
-  const { activeTab, selectedTaskId, lostOpen, closeTask, closeLost, tasks } =
-    useApp()
+  const {
+    activeTab,
+    selectedTaskId,
+    lostOpen,
+    closeTask,
+    closeLost,
+    tasks,
+    theme,
+  } = useApp()
   const selectedTask = tasks.find((t) => t.id === selectedTaskId)
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme)
+  }, [theme])
 
   return (
     <div className="app-shell">

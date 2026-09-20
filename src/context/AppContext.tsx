@@ -16,12 +16,15 @@ import { mockMessages } from "../data/mockMessages"
 // а пока они оперируют mock-данными.
 // ============================================================
 
+type Theme = "light" | "dark"
+
 interface AppState {
   tasks: Task[]
   messages: IncomingMessage[]
   activeTab: Tab
   selectedTaskId: string | null
   lostOpen: boolean
+  theme: Theme
 
   setTab: (tab: Tab) => void
   openTask: (id: string) => void
@@ -32,6 +35,7 @@ interface AppState {
   setTaskStatus: (taskId: string, status: TaskStatus) => void
   completeTask: (taskId: string) => void
   resetDemo: () => void
+  toggleTheme: () => void
 }
 
 const AppContext = createContext<AppState | null>(null)
@@ -48,6 +52,9 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [activeTab, setActiveTab] = useState<Tab>("home")
   const [selectedTaskId, setSelectedTaskId] = useState<string | null>(null)
   const [lostOpen, setLostOpen] = useState(false)
+  const [theme, setTheme] = useState<Theme>(
+    () => (localStorage.getItem("radar-theme") as Theme) || "light",
+  )
 
   const setTab = useCallback((tab: Tab) => setActiveTab(tab), [])
   const openTask = useCallback((id: string) => setSelectedTaskId(id), [])
@@ -94,6 +101,14 @@ export function AppProvider({ children }: { children: ReactNode }) {
     setLostOpen(false)
   }, [])
 
+  const toggleTheme = useCallback(() => {
+    setTheme((prev) => {
+      const next = prev === "light" ? "dark" : "light"
+      localStorage.setItem("radar-theme", next)
+      return next
+    })
+  }, [])
+
   const value = useMemo<AppState>(
     () => ({
       tasks,
@@ -101,6 +116,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       activeTab,
       selectedTaskId,
       lostOpen,
+      theme,
       setTab,
       openTask,
       closeTask,
@@ -110,6 +126,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       setTaskStatus,
       completeTask,
       resetDemo,
+      toggleTheme,
     }),
     [
       tasks,
@@ -117,6 +134,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       activeTab,
       selectedTaskId,
       lostOpen,
+      theme,
       setTab,
       openTask,
       closeTask,
@@ -126,6 +144,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       setTaskStatus,
       completeTask,
       resetDemo,
+      toggleTheme,
     ],
   )
 

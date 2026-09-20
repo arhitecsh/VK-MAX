@@ -41,7 +41,7 @@
 .dayActive {
   background: var(--primary-grad);
   border-color: transparent;
-  box-shadow: 0 8px 18px rgba(76, 111, 255, 0.3);
+  box-shadow: 0 8px 18px rgba(108, 74, 224, 0.3);
 }
 .dayActive .dayShort,
 .dayActive .dayDate {
@@ -60,6 +60,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  color: var(--text-on-bg);
 }
 .todayTag {
   font-size: 10px;

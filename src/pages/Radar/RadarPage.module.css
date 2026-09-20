@@ -23,6 +23,7 @@
   font-size: 17px;
   font-weight: 740;
   letter-spacing: -0.01em;
+  color: var(--text-on-bg);
 }
 .cards {
   display: flex;

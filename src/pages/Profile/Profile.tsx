@@ -5,7 +5,7 @@ import { PageHeader } from "../../components/PageHeader/PageHeader"
 import styles from "./Profile.module.css"
 
 export function Profile() {
-  const { tasks, resetDemo } = useApp()
+  const { tasks, resetDemo, theme, toggleTheme } = useApp()
 
   const stats = useMemo(() => {
     const total = tasks.length
@@ -48,6 +48,15 @@ export function Profile() {
       </div>
 
       <div className={styles.menu}>
+        <button className={styles.menuItem} onClick={toggleTheme}>
+          <span className={styles.menuIcon} aria-hidden>
+            {theme === "dark" ? "☀️" : "🌙"}
+          </span>
+          <span className={styles.menuLabel}>
+            {theme === "dark" ? "Светлая тема" : "Тёмная тема"}
+          </span>
+          <span className={styles.menuChevron}>›</span>
+        </button>
         <button className={styles.menuItem}>
           <span className={styles.menuIcon} aria-hidden>🔔</span>
           <span className={styles.menuLabel}>Уведомления</span>

@@ -7,7 +7,7 @@
 .timeline {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 6px;
   padding-top: 4px;
 }
@@ -33,6 +33,7 @@
   align-items: center;
   gap: 10px;
   z-index: 1;
+  min-width: 0;
 }
 
 .node {
@@ -147,6 +148,7 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  min-width: 0;
 }
 .chip.done {
   background: var(--surface-2);
