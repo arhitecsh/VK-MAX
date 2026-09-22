@@ -70,8 +70,7 @@ export function RadarPage() {
                 >
                   <h2 className={styles.sectionTitle}>{group.title}</h2>
                   <span className={styles.count}>{group.tasks.length}</span>
-                  <span className={styles.chevron} aria-hidden>⌄</span>
-                </button>
+                                  </button>
                 <div
                   id={`priority-${group.priority}`}
                   className={`${styles.groupContent} ${
