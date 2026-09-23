@@ -85,4 +85,4 @@ export interface ScheduleItem {
 }
 
 /** Вкладка приложения. */
-export type Tab = "home" | "radar" | "inbox" | "week" | "profile"
+export type Tab = "home" | "inbox" | "week" | "profile"

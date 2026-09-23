@@ -5,7 +5,6 @@ import { Modal } from "./components/Modal/Modal"
 import { TaskDetail } from "./components/TaskDetail/TaskDetail"
 import { LostScreen } from "./components/LostScreen/LostScreen"
 import { Home } from "./pages/Home/Home"
-import { RadarPage } from "./pages/Radar/RadarPage"
 import { Inbox } from "./pages/Inbox/Inbox"
 import { Week } from "./pages/Week/Week"
 import { Profile } from "./pages/Profile/Profile"
@@ -34,7 +33,6 @@ function Shell() {
       <div className="app-frame">
         <main className="app-content" key={activeTab}>
           {activeTab === "home" && <Home />}
-          {activeTab === "radar" && <RadarPage />}
           {activeTab === "inbox" && <Inbox />}
           {activeTab === "week" && <Week />}
           {activeTab === "profile" && <Profile />}

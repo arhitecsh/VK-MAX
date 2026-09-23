@@ -33,18 +33,6 @@ const ITEMS: Item[] = [
     ),
   },
   {
-    tab: "radar",
-    label: "Радар",
-    icon: (a) => (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth={a ? 2.2 : 1.9} opacity={a ? 1 : 0.55} />
-        <circle cx="12" cy="12" r="4.5" stroke="currentColor" strokeWidth={a ? 2.2 : 1.9} opacity={a ? 1 : 0.55} />
-        <path d="M12 12l6-4.5" stroke="currentColor" strokeWidth={a ? 2.2 : 1.9} strokeLinecap="round" />
-        <circle cx="12" cy="12" r="1.6" fill="currentColor" />
-      </svg>
-    ),
-  },
-  {
     tab: "inbox",
     label: "Входящие",
     icon: (a) => (
