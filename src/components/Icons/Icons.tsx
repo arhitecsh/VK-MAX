@@ -1,4 +1,3 @@
-import React from 'react';
 import logo from '../../content.png';
 import icon from '../../logo.png';
 

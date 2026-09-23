@@ -52,7 +52,6 @@ export function Home() {
 
   return (
     <div className={styles.page}>
-  <Icons />
       <header className={styles.hero}>
         <div>
           <h1 className={styles.greeting}>

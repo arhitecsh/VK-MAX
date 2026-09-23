@@ -17,6 +17,11 @@
   line-height: 1.45;
   color: var(--primary-700);
 }
+
+:global(:root[data-theme="dark"]) .aiNote {
+  color: var(--text);
+}
+
 .aiDot {
   width: 8px;
   height: 8px;

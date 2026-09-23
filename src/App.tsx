@@ -9,9 +9,11 @@ import { RadarPage } from "./pages/Radar/RadarPage"
 import { Inbox } from "./pages/Inbox/Inbox"
 import { Week } from "./pages/Week/Week"
 import { Profile } from "./pages/Profile/Profile"
+import { Auth } from "./pages/Auth/Auth"
 
 function Shell() {
   const {
+    authenticated,
     activeTab,
     selectedTaskId,
     lostOpen,
@@ -27,6 +29,7 @@ function Shell() {
   }, [theme])
 
   return (
+    !authenticated ? <Auth /> :
     <div className="app-shell">
       <div className="app-frame">
         <main className="app-content" key={activeTab}>

@@ -19,6 +19,8 @@ import { mockMessages } from "../data/mockMessages"
 type Theme = "light" | "dark"
 
 interface AppState {
+  authenticated: boolean
+  signIn: () => Promise<void>
   tasks: Task[]
   messages: IncomingMessage[]
   activeTab: Tab
@@ -55,6 +57,12 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>(
     () => (localStorage.getItem("radar-theme") as Theme) || "light",
   )
+  const [authenticated, setAuthenticated] = useState(false)
+
+  const signIn = useCallback(async () => {
+    await new Promise((resolve) => setTimeout(resolve, 750))
+    setAuthenticated(true)
+  }, [])
 
   const setTab = useCallback((tab: Tab) => setActiveTab(tab), [])
   const openTask = useCallback((id: string) => setSelectedTaskId(id), [])
@@ -111,6 +119,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
 
   const value = useMemo<AppState>(
     () => ({
+      authenticated,
+      signIn,
       tasks,
       messages,
       activeTab,
@@ -135,6 +145,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
       selectedTaskId,
       lostOpen,
       theme,
+      authenticated,
+      signIn,
       setTab,
       openTask,
       closeTask,
