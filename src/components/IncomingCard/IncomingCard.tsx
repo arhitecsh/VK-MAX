@@ -8,7 +8,7 @@ interface Props {
 }
 
 export function IncomingCard({ message, onAdd, index = 0 }: Props) {
-  const added = message.addedToRadar
+  const added = message.addedToPortfolio
   return (
     <div
       className={`${styles.card} ${added ? styles.added : ""}`}
@@ -38,7 +38,7 @@ export function IncomingCard({ message, onAdd, index = 0 }: Props) {
                 strokeLinejoin="round"
               />
             </svg>
-            На радаре
+            В портфеле
           </span>
         ) : (
           <button className={styles.addBtn} onClick={() => onAdd(message.id)}>
