@@ -13,8 +13,8 @@ export const mockMessages: IncomingMessage[] = [
     subject: "Физика",
     text: "К четвергу подготовить лабораторную работу №3",
     receivedAt: "сегодня, 16:42",
-    addedToRadar: false,
-    actionLabel: "Добавить на радар",
+    addedToPortfolio: false,
+    actionLabel: "Добавить в портфель",
     suggestedTask: {
       title: "Лабораторная работа №3",
       subject: "Физика",
@@ -35,7 +35,7 @@ export const mockMessages: IncomingMessage[] = [
     subject: "Математика",
     text: "На следующем уроке будет самостоятельная работа по теме «Производная»",
     receivedAt: "вчера, 18:21",
-    addedToRadar: true,
+    addedToPortfolio: true,
     taskId: "t-math-selfwork",
     actionLabel: "Добавить подготовку",
     suggestedTask: {
@@ -58,7 +58,7 @@ export const mockMessages: IncomingMessage[] = [
     subject: "История",
     text: "Прочитать параграф 17 и ответить на вопросы",
     receivedAt: "сегодня, 12:10",
-    addedToRadar: true,
+    addedToPortfolio: true,
     taskId: "t-hist-reading",
     actionLabel: "Добавить",
     suggestedTask: {
@@ -80,7 +80,7 @@ export const mockMessages: IncomingMessage[] = [
     subject: "Химия",
     text: "Выслал файл с задачами по теме «Оксиды». Решить к пятнице.",
     receivedAt: "вчера, 15:30",
-    addedToRadar: true,
+    addedToPortfolio: true,
     taskId: "t-chem-hw",
     actionLabel: "Добавить",
     suggestedTask: {

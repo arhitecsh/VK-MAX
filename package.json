@@ -1,9 +1,9 @@
 {
-  "name": "radar",
+  "name": "my-portfolio",
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "Радар — мини-приложение для школьников: понимай, что важно сегодня.",
+  "description": "Мой портфель — мини-приложение для школьников: понимай, что важно сегодня.",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",

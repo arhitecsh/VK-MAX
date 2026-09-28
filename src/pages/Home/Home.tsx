@@ -46,7 +46,7 @@ export function Home() {
   )
 
   const freshMessage = useMemo(
-    () => messages.find((m) => !m.addedToRadar),
+    () => messages.find((m) => !m.addedToPortfolio),
     [messages],
   )
 
@@ -136,7 +136,7 @@ export function Home() {
                 className={styles.freshPrimary}
                 onClick={() => addTaskFromMessage(freshMessage.id)}
               >
-                Добавить на радар
+                Добавить в портфель
               </button>
               <button className={styles.freshGhost} onClick={() => setTab("inbox")}>
                 Подробнее

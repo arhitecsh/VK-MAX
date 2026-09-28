@@ -54,9 +54,12 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [activeTab, setActiveTab] = useState<Tab>("home")
   const [selectedTaskId, setSelectedTaskId] = useState<string | null>(null)
   const [lostOpen, setLostOpen] = useState(false)
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem("radar-theme") as Theme) || "light",
-  )
+  const [theme, setTheme] = useState<Theme>(() => {
+    const savedTheme =
+      localStorage.getItem("my-portfolio-theme") ??
+      localStorage.getItem("radar-theme")
+    return (savedTheme as Theme) || "light"
+  })
   const [authenticated, setAuthenticated] = useState(false)
 
   const signIn = useCallback(async () => {
@@ -86,7 +89,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const addTaskFromMessage = useCallback((messageId: string) => {
     setMessages((prevMsgs) => {
       const msg = prevMsgs.find((m) => m.id === messageId)
-      if (!msg || msg.addedToRadar || !msg.suggestedTask) return prevMsgs
+      if (!msg || msg.addedToPortfolio || !msg.suggestedTask) return prevMsgs
 
       const newTask: Task = {
         ...msg.suggestedTask,
@@ -96,7 +99,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       setTasks((prevTasks) => [newTask, ...prevTasks])
 
       return prevMsgs.map((m) =>
-        m.id === messageId ? { ...m, addedToRadar: true, taskId: newTask.id } : m,
+        m.id === messageId ? { ...m, addedToPortfolio: true, taskId: newTask.id } : m,
       )
     })
   }, [])
@@ -112,7 +115,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const toggleTheme = useCallback(() => {
     setTheme((prev) => {
       const next = prev === "light" ? "dark" : "light"
-      localStorage.setItem("radar-theme", next)
+      localStorage.setItem("my-portfolio-theme", next)
       return next
     })
   }, [])
